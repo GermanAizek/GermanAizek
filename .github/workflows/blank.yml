@@ -14,24 +14,18 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
-          # The following scopes are required:
-          #  - public_access (default scope)
-          # The following additional scopes may be required:
-          #  - read:org      (for organization related metrics)
-          #  - read:user     (for user related data)
-          #  - read:packages (for some packages related data)
-          #  - repo          (optional, if you want to include private repositories)
+          filename: metrics.plugin.notable.indepth.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_notable: yes
+          plugin_notable_indepth: yes
+          plugin_notable_repositories: yes
 
           # Options
           user: GermanAizek
           template: classic
-          base: header, community, repositories
           plugin_followup: no
           plugin_followup_archived: no
           plugin_followup_sections: repositories
-          plugin_notable: yes
           plugin_notable_from: all
-          plugin_notable_repositories: yes
           plugin_notable_types: commit, pull_request, issues
