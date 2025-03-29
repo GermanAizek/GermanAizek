@@ -9,6 +9,8 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    container:
+     image: debian:bookworm
     permissions:
       contents: write
     steps:
