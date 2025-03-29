@@ -27,10 +27,9 @@ jobs:
           # Options
           user: GermanAizek
           template: classic
-          base: header, activity, community, repositories
-          config_timezone: Europe/Moscow
-          plugin_followup: yes
-          plugin_followup_archived: yes
+          base: header, community, repositories
+          plugin_followup: no
+          plugin_followup_archived: no
           plugin_followup_sections: repositories
           plugin_notable: yes
           plugin_notable_from: all
