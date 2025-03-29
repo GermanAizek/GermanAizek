@@ -9,8 +9,6 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    container:
-     image: debian:bookworm
     permissions:
       contents: write
     steps:
@@ -20,14 +18,11 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_notable: yes
+          plugin_notable_from: all
           plugin_notable_indepth: yes
           plugin_notable_repositories: yes
+          plugin_notable_types: commit, pull_request, issues
 
           # Options
           user: GermanAizek
           template: classic
-          plugin_followup: no
-          plugin_followup_archived: no
-          plugin_followup_sections: repositories
-          plugin_notable_from: all
-          plugin_notable_types: commit, pull_request, issues
